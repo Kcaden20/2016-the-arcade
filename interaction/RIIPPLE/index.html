@@ -1,0 +1,269 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<link href="css/lightbox.min.css" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<title>Design World</title>
+	<style>
+		
+		body {
+			overflow: hidden;
+			height:100vh;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f1e767+0,feb645+100;Yellow+3D */
+background: #f1e767; /* Old browsers */
+background: -moz-linear-gradient(top, #f1e767 0%, #feb645 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #f1e767 0%,#feb645 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #f1e767 0%,#feb645 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645',GradientType=0 ); /* IE6-9 */
+copy
+}
+		
+		#div1 {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 700;
+			text-align: center;	
+			font-size: 30px;
+			margin-top: 100px;
+		
+			}
+		.ripple-wrap {
+			position: relative;
+			display: block;
+			margin: 0 auto;
+			width:500px;
+			height:300px;
+			margin-top: 10%;
+		
+
+		}
+
+		.ripple-wrap canvas {
+			position: absolute;
+			z-index: 1;
+			border: 10px solid black;
+			cursor: url('cursor.png'), auto;
+		}
+		
+		.bgwrap {
+			position: absolute;
+			top:0px;
+	
+			z-index: -100;
+			width: 100%;
+			height:100%;
+			
+		}
+		h1 {
+			font-size: 30px;
+			font-family: 'Montserrat', sans-serif;
+			text-transform: capitalize;
+		}
+		
+		.center {
+					text-align: center;
+		}
+		
+		#bottom {
+			position:absolute;
+			opacity: 1;
+			bottom:0px;
+			 text-align: center;
+   width: 100%;
+		}
+		.right {
+			transform: rotate(90deg);
+	position: absolute;
+	right:-50px;
+	top:50%;
+		}
+		
+		.left {
+			transform: rotate(-90deg);
+
+	position: absolute;
+	left:-100px;
+	top:50%;
+		}
+		
+		.outer {
+    display: table;
+    position: absolute;
+    height: 90%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto; 
+    width: /*whatever width you want*/;
+}
+		@font-face {
+	font-family: 'Conv_JRUG_PUNK';
+	src: url('fonts/JRUG_PUNK.eot');
+	src: local('☺'), url('fonts/JRUG_PUNK.woff') format('woff'), url('fonts/JRUG_PUNK.ttf') format('truetype'), url('fonts/JRUG_PUNK.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+		
+		@font-face {
+	font-family: 'Conv_oRMR_MK3';
+	src: url('../fonts/oRMR_MK3.eot');
+	src: local('☺'), url('../fonts/oRMR_MK3.woff') format('woff'), url('fonts/oRMR_MK3.ttf') format('truetype'), url('../fonts/oRMR_MK3.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+		
+	</style>
+
+
+
+	<script src="ripple.js"></script>
+</head>
+<body>
+	<audio id="clap" loop>
+		<source src="sound.mp3">
+		<source src="sound.ogg">
+		<source src="sound.wav">
+	</audio>
+	<div class="bgwrap"><h1 class="center">Make waves in the Design world!</h1> 
+	
+		
+</div>
+	<h1 class="right">Get Noticed!</h1>
+	<h1 class="left">Become Famous!</h1>
+	<h1 class="center" id="bottom">
+	</h1>
+	
+	
+	<div class="outer">
+	<div class="middle">
+	<div class="innter">
+		<div class="ripple-wrap" id="ripple" onmousemove="timer_tick()" onmouseout="timer_done()"><img src="image.jpg" height="300" width="500" onload="waterRipple(this);" /></div>
+		<div id="div1"></div>
+
+	</div>
+	</div>
+	</div>
+	
+<script src="js/lightbox-plus-jquery.min.js"></script>
+<script>
+
+	 
+	$(document).ready(function(){
+		$(".ripple-wrap").mouseover(function(){
+			$("#clap").get(0).play();
+		});
+		
+		$(".ripple-wrap").mouseout(function(){
+			$("#clap").get(0).pause();
+		});
+		
+		
+		
+		
+	});
+</script>
+<script language="javascript" type="text/javascript">
+	<!--
+	
+	// Declaring class "Timer"
+	var Timer = function()
+	{		
+		// Property: Frequency of elapse event of the timer in millisecond
+		this.Interval = 1000;
+		
+		// Property: Whether the timer is enable or not
+		this.Enable = new Boolean(false);
+		
+		// Event: Timer tick
+		this.Tick;
+		
+		// Member variable: Hold interval id of the timer
+		var timerId = 0;
+		
+		// Member variable: Hold instance of this class
+		var thisObject;
+
+		
+		// Function: Start the timer
+/*
+		this.Start = function()
+		{
+			this.Enable = new Boolean(true);
+	
+			thisObject = this;
+			if (thisObject.Enable)
+			{
+				thisObject.timerId = setInterval(
+				function()
+				{
+					thisObject.Tick(); 
+				}, thisObject.Interval);
+			}
+		};
+*/
+		
+		// Function: Stops the timer
+		this.Stop = function()
+		{			
+			thisObject.Enable = new Boolean(false);
+			clearInterval(thisObject.timerId);
+		};
+	
+	};
+	
+	var index = 0;
+	var obj = new Timer();
+	obj.Interval = 30;
+	obj.Tick = timer_tick;
+	obj.Start();
+	
+	function timer_tick()
+	{
+		
+		
+		index  = index + 1;
+		
+		p = Math.round(index / 20);
+		
+		document.getElementById("div1").innerHTML = "You've made this many waves: <br/>" + p;
+		
+		if (p === 10) {
+				document.getElementById("bottom").innerHTML = "Woah! Great Start!";
+		} else if(p === 20) {
+			document.getElementById("bottom").innerHTML = "Keep Going!";
+		} else if(p === 40) {
+			document.getElementById("bottom").innerHTML = "Make those waves!";
+		} else if(p === 80) {
+			document.getElementById("bottom").innerHTML = "Wow!!";
+		} else if(p === 120) {
+			document.getElementById("bottom").innerHTML = "So many waves!!";
+		} else if(p === 160) {
+			document.getElementById("bottom").innerHTML = "The design world is sure to notice you now!";
+		} else if(p === 200) {
+			document.getElementById("bottom").innerHTML = "They've probably messaged you!";
+		} 
+	
+		
+	}
+	
+	
+	function timer_done(){
+		obj.Stop();
+	}
+	//-->
+	</script>
+</body>
+
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/style.css">
+		<link href="css/lightbox.min.css" rel="stylesheet">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script>
+	
+	$(document).ready(function(){
+	
+/*
+	$(".imgwrap").click(function(){
+		$("img").css("opacity","1");
+		
+	})
+	$(".bodywrap").mouseover(function(){
+		$("img").css("opacity",".5");
+		
+	});
+*/
+	
+	
+	$(".gradient").mousemove(function( event ) {
+  var w = $(this).width(),
+      pct = 260*(+event.pageX)/w,
+      bg = "linear-gradient(" + pct + "deg,#fb00ff 0%, #ffffff 100%)";
+      $(".gradient").css("background-image", bg);
+});
+
+});
+
+$(function () {
+    $(".click").click(function () {
+        if($(this).parent().css("left") == "-420px"){
+        $(this).parent().animate({left:'0px'}, {queue: false, duration: 500});
+    }else {
+        $(this).parent().animate({left:'-420px'}, {queue: false, duration: 500});}
+    });
+});
+		</script>
+	
+	</head>
+	<body>
+		<div class="mainwrap">
+			<audio autoplay loop>
+			<source src="img/sound.mp3">
+			<source src="img/sound.ogg">
+		</audio>
+		
+			<audio autoplay loop>
+			<source src="img/sound2.mp3">
+<!-- 			<source src="img/sound.ogg"> -->
+		</audio>
+		<div class="imgwrap">
+			
+		  <a href="img/26-james-young.jpg" data-lightbox="1" data-caption="James Young Prosthetic limb"><img class="example-image" src="img/26-james-young.jpg" alt="image-1" /></a>
+		  <a href="img/382-future-london-skyline-2100.jpg" data-lightbox="1">
+			  <img src="img/382-future-london-skyline-2100.jpg">
+			  
+		  </a>
+		  <a href="img/CC_Travess_Smalley_2013_Profile.jpg" data-lightbox="1">
+			  <img src="img/CC_Travess_Smalley_2013_Profile.jpg">
+		  </a>
+		  
+		  <a href="img/kanye%20film%20pic.jpg" data-lightbox="1">
+			  <img src="img/kanye%20film%20pic.jpg">
+		  </a>
+		  
+		  <a href="img/tumblr_o2tgh2lh2i1u7iizho8_1280.jpg" data-lightbox="1">
+			  <img src="img/tumblr_o2tgh2lh2i1u7iizho8_1280.jpg">
+		  </a>
+		  <div class="click"><p class="vert">References</p></div>
+		</div>
+		<div class="txtwrap">
+		<svg viewBox="0 0 1000 600">
+  <symbol id="s-text">
+    <text text-anchor="middle"
+          x="50%"
+          y="35%"
+          class="text--line"
+          >
+
+    </text>
+    <text text-anchor="middle"
+          x="50%"
+          y="68%"
+          class="text--line2"
+          >
+		 FUTURE
+    </text>
+    
+  </symbol>
+  
+  <g class="g-ants">
+    <use xlink:href="#s-text"
+      class="text-copy"></use>     
+    <use xlink:href="#s-text"
+      class="text-copy"></use>     
+    <use xlink:href="#s-text"
+      class="text-copy"></use>     
+    <use xlink:href="#s-text"
+      class="text-copy"></use>     
+    <use xlink:href="#s-text"
+      class="text-copy"></use>     
+  </g>
+  
+  
+</svg>
+		</div>
+		<div class="gradient"></div>
+		</div>
+			<div class="bodywrap">
+		</div>
+			<script src="js/lightbox-plus-jquery.min.js"></script>
+	</body>
+</html>

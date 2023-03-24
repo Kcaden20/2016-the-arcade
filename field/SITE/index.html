@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Field</title>
+	<link rel="stylesheet" href="css/style.css">
+		<link href="css/lightbox.min.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<link href="../_assets/css/shared.css" rel="stylesheet" type="text/css"/>
+	<link href="../_assets/css/examples.css" rel="stylesheet" type="text/css"/>
+	<script src="../_assets/js/examples.js"></script>
+
+	<script src="../lib/easeljs-NEXT.combined.js"></script>
+	<!-- We also provide hosted minified versions of all CreateJS libraries.
+	  http://code.createjs.com -->
+	  <script>
+		$(function () {
+    $(".click").click(function () {
+        if($(this).parent().css("left") == "-420px"){
+        $(this).parent().animate({left:'0px'}, {queue: false, duration: 500});
+    }else {
+        $(this).parent().animate({left:'-420px'}, {queue: false, duration: 500});}
+    });
+});
+		</script>
+<script>
+	var canvas;
+	var stage;
+	var shape;
+	var radius = (Math.random() * 100);
+	var rings = (Math.random() * 8);
+
+	function init() {
+		// create a new stage and point it at our canvas:
+		canvas = document.getElementById("testCanvas");
+		stage = new createjs.Stage(canvas);
+
+		// create a large number of slightly complex vector shapes, and give them random positions and velocities:
+
+		var colors = ["#8B0000", "#FFFF00", "#7CFC00", "#9ACD32", "#FF00FF", "#F4A460", "#FFFACD", "#9b4a0b", "#FFE4B5", "#9ACD32", "#1E90FF", "#32CD32", "#00FF00", "#FF8C00", "#FFFF00", "#FFA500", "#4B0082", "#7B68EE", "#FF00FF"];
+
+		for (var i = 0; i < 200; i++) {
+			shape = new createjs.Shape();
+			for (var j = rings; j > 0; j--) {
+				shape.graphics.beginFill(colors[Math.random() * colors.length | 0]).drawCircle(0, 0, radius * j / rings);
+			}
+			
+			radius = (Math.random() * 100);
+			rings = (Math.random() * 8);
+			shape.x = Math.random() * canvas.width;
+			shape.y = Math.random() * canvas.height;
+			shape.velX = Math.random() * 30 - 5;
+			shape.velY = Math.random() * 30 - 10;
+			
+			// turn snapToPixel on for all shapes - it's set to false by default on Shape.
+			// it won't do anything until stage.snapToPixelEnabled is set to true.
+			shape.snapToPixel = true;
+
+			stage.addChild(shape);
+			
+			
+		}
+
+
+		
+		
+		createjs.Ticker.timingMode = createjs.Ticker.RAF;
+		createjs.Ticker.addEventListener("tick", tick);
+	}
+
+	function tick(event) {
+		var w = canvas.width + radius * 3;
+		var h = canvas.height + radius * 3;
+		var l = stage.getNumChildren() - 1;
+
+		// iterate through all the children and move them according to their velocity:
+		for (var i = 1; i < l; i++) {
+			var shape = stage.getChildAt(i);
+			shape.x = (shape.x + radius + shape.velX + w) % w - radius;
+			shape.y = (shape.y + radius + shape.velY + h) % h - radius;
+		}
+
+		
+
+		// draw the updates to stage:
+		stage.update(event);
+	}
+
+	function toggleCache(value) {
+
+		var l = stage.getNumChildren() - 1;
+
+		for (var i = 0; i < l; i++) {
+			var shape = stage.getChildAt(i);
+			if (value) {
+				shape.cache(-radius, -radius, radius * 2, radius * 2);
+			} else {
+				shape.uncache();
+			}
+		}
+	}
+</script>
+
+</head>
+
+<body onload="init();">
+		
+<!--
+	<div class="imgwrap">
+			 <a href="img/26-james-young.jpg" data-lightbox="1" data-caption="James Young Prosthetic limb"><img class="example-image" src="img/26-james-young.jpg" alt="image-1" /></a>
+		  <a href="img/382-future-london-skyline-2100.jpg" data-lightbox="1">
+			  <img src="img/382-future-london-skyline-2100.jpg">
+			  
+		  </a>
+		  <a href="img/CC_Travess_Smalley_2013_Profile.jpg" data-lightbox="1">
+			  <img src="img/CC_Travess_Smalley_2013_Profile.jpg">
+		  </a>
+		  
+		  <a href="img/kanye%20film%20pic.jpg" data-lightbox="1">
+			  <img src="img/kanye%20film%20pic.jpg">
+		  </a>
+		  
+		  <a href="img/tumblr_o2tgh2lh2i1u7iizho8_1280.jpg" data-lightbox="1">
+			  <img src="img/tumblr_o2tgh2lh2i1u7iizho8_1280.jpg">
+		  </a>
+
+			<div class="click"><p class="vert">References</p></div>
+		</div>
+-->
+		<audio autoplay loop>
+			<source src="cartoon.mp3">
+		</audio>
+		<div class="text"><p>FIELD</p></div>
+<canvas id="testCanvas" width="960" height="1000"></canvas>
+
+<script src="js/lightbox-plus-jquery.min.js"></script>
+</body>
+</html>

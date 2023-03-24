@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Newly Formed</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+		<style>
+  					@font-face {
+	font-family: 'Conv_oRMR_MK3';
+	src: url('css/fonts/oRMR_MK3.eot');
+	src: local('☺'), url('css/fonts/oRMR_MK3.woff') format('woff'), url('css/fonts/oRMR_MK3.ttf') format('truetype'), url('css/fonts/oRMR_MK3.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+		</style>
+
+
+	</head>
+	<body>
+  	<video autoplay loop id="bgvid">
+    <source src="videos/catridge.mp4" type="video/mp4">
+</video>
+  	<audio id="audio" loop autoplay>
+
+  <source src="music/music.mp3" type="audio/mpeg">
+</audio>
+		<h1 id="head">
+			THE ARCADE
+		</h1>
+		<input type=button value="LAUNCH THE FULL ARCADE!" class="button "onclick="open_win()">
+		<h3 id="">(turn off pop up blocker)</h3>
+
+
+		<ol>
+		<a id="b" href="future/index.html">
+
+  		<video width="320" autoplay loop>
+
+        <source src="videos/Future.mp4" type="video/mp4">
+
+
+  </video>
+		</a>
+		<a id="c" href="internet/index.html">
+
+        <video width="320" autoplay loop>
+        <source src="videos/internet.mp4" type="video/mp4">
+
+
+        </video>
+		</a>
+		<a id="d" href="field/SITE/index.html">
+
+  		  <video width="320" autoplay loop>
+        <source src="videos/FIeld.mp4" type="video/mp4">
+
+
+        </video>
+		</a>
+		<a id="e" href="emergent/index.html">
+
+  		  <video width="320" autoplay loop>
+        <source src="videos/emergent.mp4" type="video/mp4">
+
+
+        </video>
+		</a>
+		<a id="f" href="psyche/empty-example/index.html">
+
+  		  <video width="320" autoplay loop>
+        <source src="videos/Psyche.mp4" type="video/mp4">
+
+
+        </video>
+		</a>
+
+		<a id="g" href="control/index.html">
+
+  		  <video width="320" autoplay loop>
+        <source src="videos/control.mp4" type="video/mp4">
+
+
+        </video>
+		</a>
+		<a id="h" href="interaction/RIIPPLE/index.html">
+
+  		  <video width="320" autoplay loop>
+        <source src="videos/Interaction.mp4" type="video/mp4">
+
+
+        </video>
+		</a>
+		<a id="i" href="point/index.html">
+
+  		  <video width="320" autoplay loop>
+        <source src="videos/point.mp4" type="video/mp4">
+
+
+        </video>
+		</a>
+		<a id="j" href="game/SITE/Game/Game.html">
+
+  		  <video width="320" autoplay loop>
+        <source src="videos/Game.mp4" type="video/mp4">
+
+
+        </video>
+		</a>
+		</ol>
+
+		<script>
+
+
+setTimeout(function(){
+   $("#b").addClass("a");
+    animateDiv();
+  	animateDivTwo();
+
+}, 2000);
+
+setTimeout(function(){
+    $("#c").addClass("a");
+    animateDiv();
+  	animateDivTwo();
+}, 4000)
+
+setTimeout(function(){
+    $("#d").addClass("a");
+    animateDiv();
+  	animateDivTwo();
+}, 8000)
+
+setTimeout(function(){
+    $("#e").addClass("a");
+    animateDiv();
+  	animateDivTwo();
+}, 10000)
+
+setTimeout(function(){
+    $("#f").addClass("a");
+    animateDiv();
+  	animateDivTwo();
+}, 12000)
+
+setTimeout(function(){
+    $("#g").addClass("a");
+    animateDiv();
+  	animateDivTwo();
+}, 14000)
+
+setTimeout(function(){
+    $("#h").addClass("a");
+    animateDiv();
+  	animateDivTwo();
+}, 16000)
+
+setTimeout(function(){
+    $("#i").addClass("a");
+    animateDiv();
+  	animateDivTwo();
+}, 18000)
+
+setTimeout(function(){
+    $("#j").addClass("a");
+    animateDiv();
+  	animateDivTwo();
+}, 20000)
+
+
+function makeNewPosition(){
+
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() - 100;
+    var w = $(window).width() - 100;
+
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+
+    return [nh,nw];
+
+}
+
+function animateDiv(element){
+    var newq = makeNewPosition();
+    var oldq = $('.a').offset();
+    var speed = calcSpeed([oldq.top, oldq.left], newq);
+
+    $(element).animate({ top: newq[0], left: newq[1] }, speed, function(){
+      animateDiv(element);
+    });
+
+};
+
+function animateDivTwo(){
+    var newq = makeNewPosition();
+    var oldq = $('.a').offset();
+    var speed = calcSpeed([oldq.top, oldq.left], newq);
+
+    $('.a').animate({ top: newq[0], left: newq[1] }, speed, function(){
+      animateDiv(this);
+    });
+
+};
+
+function calcSpeed(prev, next) {
+
+    var x = Math.abs(prev[1] - next[1]);
+    var y = Math.abs(prev[0] - next[0]);
+
+    var greatest = x > y ? x : y;
+
+    var speedModifier = .2;
+
+    var speed = Math.ceil(greatest/speedModifier);
+
+    return speed;
+
+}
+
+function open_win() {
+    window.open("http://kevincadena.com/newlyformed/future/index.html")
+    window.open("http://kevincadena.com/newlyformed/internet/index.html")
+    window.open("http://kevincadena.com/newlyformed/field/SITE/index.html")
+    window.open("http://kevincadena.com/newlyformed/emergent/index.html")
+    window.open("http://kevincadena.com/newlyformed/control/index.html")
+    window.open("http://kevincadena.com/newlyformed/interaction/RIIPPLE/index.html")
+    window.open("http://kevincadena.com/newlyformed/point/index.html")
+    window.open("http://kevincadena.com/newlyformed/psyche/empty-example/index.html")
+    window.open("http://kevincadena.com/newlyformed/game/SITE/Game/Game.html")
+
+}
+
+
+    var audio = document.getElementById("audio");
+    audio.volume = 0.1;
+		</script>
+	</body>
+
+</html>

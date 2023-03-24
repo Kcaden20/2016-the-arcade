@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- p5 -->
+    <title>Psyche</title>
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.9/p5.min.js"></script>
+    <!-- un/comment lines below to include/exclude extra p5 libraries  -->
+<!--     <script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.9/addons/p5.sound.min.js"></script> -->
+<!--   <script language="javascript" type="text/javascript" src="sketch.js"></script> -->
+  <!-- this line removes any default padding and style. you might only need one of these values set. -->
+  <style> body {padding: 0; margin: 0;
+	  overflow:hidden;
+  } 
+  #demo12 {
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    text-align: center;
+      margin: auto;
+  position: absolute;
+
+	
+  }
+  
+  #demo12:hover {
+	  background-color:white;
+  }
+  h1{
+	 position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-transform: uppercase;
+  }
+  </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="jquery-ui.js"></script>
+  <script src="jquery.jrumble.1.3.js"></script>
+</head>
+<body>
+
+<div id="demo12"><h1><strong style="color:white; text-transform: none">GET OUT OF MY HEAD</strong><br/>WHY SHOULD I?</h1></div>
+<h1  id="please" strong style="color:white; text-transform: none"><small><small><small><br/><br/><br/>(Please! You don't want to come in here)</small></small></small></h1>
+<audio autoplay loop>
+	<source src="ambience.mp3">
+</audio> 
+<audio id="laugh" loop>
+	<source src="laugh.mp3">
+</audio>
+
+<script>
+$(document).ready(function(){
+	$('#demo12').jrumble({
+		x: 9,
+		y: 9,
+		rotation: 20,
+		speed: 2,
+		opacity: true,
+		opacityMin: .005
+});
+
+	$('body').hover(function(){
+		$('#demo12').trigger('startRumble');
+		$('#please').html("<small><small><small><br/><br/><br/>I told you not to come in! Now they'll never leave...</small></small></small>");
+		$("#laugh").get(0).play();
+		}, function(){
+		$('#demo12').trigger('stopRumble');
+});
+		
+		
+});
+	
+</script>
+ 
+</body>
+</html>

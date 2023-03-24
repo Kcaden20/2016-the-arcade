@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/style.css">
+		<link href="css/lightbox.min.css" rel="stylesheet">
+		<title>Control</title>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js">			
+		</script>
+		<script>
+		$(document).ready(function(){
+			
+	
+		
+		$(function () {
+    $(".click").click(function () {
+        if($(this).parent().css("left") == "-420px"){
+        $(this).parent().animate({left:'0px'}, {queue: false, duration: 500});
+    }else {
+        $(this).parent().animate({left:'-420px'}, {queue: false, duration: 500});}
+    });
+});
+
+		$(function(){
+    $("button").on({
+        mouseover:function(){
+            
+            
+            $(this).css({
+                left:(Math.random()*800)+"px",
+                top:(Math.random()*600)+"px",
+            });
+        }
+    });
+});
+	
+
+
+	});
+		</script>
+		
+		</script>
+	</head>
+	<body>
+		<div class="imgwrap">
+			 <a href="img/1.png" data-lightbox="1" data-caption="James Young Prosthetic limb"><img class="example-image" src="img/1.png" alt="image-1" /></a>
+		  <a href="img/2.png" data-lightbox="1">
+			  <img src="img/2.png">
+			  
+		  </a>
+		  <a href="img/3.png" data-lightbox="1">
+			  <img src="img/3.png">
+		  </a>
+		  
+		  <a href="img/4.png" data-lightbox="1">
+			  <img src="img/4.png">
+		  </a>
+		  
+		  <a href="img/5.png" data-lightbox="1">
+			  <img src="img/5.png">
+		  </a>
+
+			<div class="click"><p class="vert">References</p></div>
+		</div>
+		<button>Control</button>
+		<script src="js/lightbox-plus-jquery.min.js"></script>
+	</body>
+</html>

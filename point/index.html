@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src='lettercrap.js'></script>
+	<title>I'm a Designer</title>
+	<link rel='stylesheet' href='lettercrap.css'/>
+</head>
+<body >
+
+	
+	<div class="container">
+	
+	<div class="textwrap">
+		<h1 >I'm not only a designer, I'm a...</h1>
+		<a href="javascript:void(0)" id="zoomtab">-</a>
+	</div>
+	</div>
+	<div id="yike" data-letter-crap='test.png' style='width: 700px; height:700px'></div>
+		
+		
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+<script>
+	$(document).ready(function(){
+		$('#zoomtab').toggle(function () {
+    $("#yike").css({"font-size": "15px"});
+    $("#yike").css({"line-height": "15px"});
+    $("#zoomtab").html("+");
+}, function () {
+    $("#yike").css({"font-size": "45px"});
+    $("#yike").css({"line-height": "45px"});
+    $("#zoomtab").html("-");
+});
+	})
+</script>
+</body>
+</html>

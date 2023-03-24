@@ -1,0 +1,148 @@
+
+		.about {
+  		font-size: 30px !important;
+  		  	 -webkit-text-stroke-width: 1px !important;
+   -webkit-text-stroke-color:black !important;
+   position:fixed; 
+   top:140px !important;
+		}
+		body {
+
+		}
+		
+		video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(polina.jpg) no-repeat;
+    background-size: cover; 
+    opacity: 1 !important;
+}
+		
+		.a {
+  		position:fixed;
+  		z-index: 100;
+		}
+		h1{
+			
+			font-family: 'Conv_oRMR_MK3';
+		}
+		
+		#head {
+  	  text-align: left;	
+  	  position: fixed;
+  	  font-size: 100px;
+  	  left:30px;
+  	  top:-20px;
+  	  color:white;
+  	 -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color:black;
+      
+		}
+		
+		h2{
+			font-family: 'Conv_oRMR_MK3';
+			
+		}
+		
+		h3{
+			font-family: 'Conv_oRMR_MK3';
+		}
+		
+		p {
+			font-family: sans-serif;
+		}
+		
+		ol {
+			list-style: none;
+      text-align: center;
+		}
+		
+		.button {
+    background-color: orange; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    font-family: 'Conv_oRMR_MK3';
+          -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color:black;
+      border-radius: 13px;
+    cursor: pointer;
+    position:fixed;
+    bottom:50px;
+    right:50px;
+    z-index: 1000;
+}
+
+  .button:hover {
+    background-color: white;
+    color: orange;
+  
+  }
+		iframe {
+      width:200px;
+      height:200px;
+		}
+		
+		video {
+  		border-radius: 5px;
+  		box-shadow: 1px 1px 12px 5px rgba(255, 255, 255, 0.56);
+  		margin: 20px;
+		}
+		
+		#foot {
+  		position:fixed;
+  		bottom:15px;
+  		right:50px;
+  		text-align: right;
+  		color:white;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color:black;
+    
+		}
+		
+		#link {
+  		position:absolute;
+  		font-size: 20px;
+  		font-family: 'Conv_oRMR_MK3';
+  		color:white;
+  		-webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color:black;
+      overflow: hidden;
+/*       display: none; */
+      height:70px;
+      width:320px;
+      text-align: center;
+      margin: 0px;
+      padding:0px;
+      display:inline-block;
+      top:100px;
+		}
+		
+		a {
+  		color:orange;
+  		text-decoration: none;
+  		   -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color:black;
+		}
+		
+		a:hover #link {
+
+}
+		
+    video:hover {
+      opacity: .5;
+    }
